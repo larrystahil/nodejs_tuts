@@ -14,10 +14,15 @@ yargs.command({
             describe: 'Note Title',
             demandOption: true,
             type: 'string'
+        },
+        body: {
+            describe: 'Body of the note',
+            demandOption: true,
+            type: 'string'
         }
     },
     handler: function (argv){
-        console.log('Adding a new note!', argv);
+        console.log('Title: ' + argv.title, '\nBody: ' + argv.body);
     }
 });
 
@@ -48,4 +53,13 @@ yargs.command({
     }
 });
 
-console.log(yargs.argv);
+yargs.parse()
+
+// console.log(yargs.argv);
+
+// Challeng: Add an option to yargs
+
+// 1. Setup a body option for add command
+// 2. Configure a description, make ut required, and for it to e a string
+// 3. Log the  body value in the handler function
+// 4. Test your work!
